@@ -1,0 +1,18 @@
+{
+  "schema_version": 1,
+  "status": "approved",
+  "title_ru": "Страж Терры: Армада",
+  "title_en": "Terra Defense: Armada",
+  "series_ru": "Страж Терры",
+  "series_en": "Terra Defense",
+  "subtitle_ru": "Армада",
+  "subtitle_en": "Armada",
+  "short_title_ru": "Армада",
+  "short_title_en": "Armada",
+  "former_working_title_ru": "Космический бой",
+  "language_title_map": {
+    "ru": "Страж Терры: Армада",
+    "en": "Terra Defense: Armada"
+  },
+  "note_ru": "Это утверждённая пара локализованных названий. Использовать дословно, без повторного перевода названия между языками."
+}

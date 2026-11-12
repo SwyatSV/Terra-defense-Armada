@@ -1,0 +1,88 @@
+{
+  "schema_version": 1,
+  "status": "provisional_balance_and_engineering_defaults",
+  "ability_order": [
+    "pulse",
+    "guidance",
+    "double_shot",
+    "repair"
+  ],
+  "difficulty_weights": {
+    "status": "provisional_balance",
+    "value": {
+      "easy": 30,
+      "medium": 40,
+      "hard": 25,
+      "expert": 5
+    }
+  },
+  "personality_weights": {
+    "status": "provisional_balance",
+    "value": {
+      "aggressive": 1,
+      "scout": 1,
+      "cautious": 1,
+      "balanced": 1
+    }
+  },
+  "bot_starting_charges": {
+    "status": "provisional_balance",
+    "value": {
+      "aggressive": {
+        "pulse": 1,
+        "guidance": 0,
+        "double_shot": 2,
+        "repair": 1
+      },
+      "scout": {
+        "pulse": 2,
+        "guidance": 1,
+        "double_shot": 1,
+        "repair": 0
+      },
+      "cautious": {
+        "pulse": 1,
+        "guidance": 0,
+        "double_shot": 1,
+        "repair": 2
+      },
+      "balanced": {
+        "pulse": 1,
+        "guidance": 1,
+        "double_shot": 1,
+        "repair": 1
+      }
+    }
+  },
+  "fresh_profile": {
+    "status": "engineering_assumption",
+    "inventory": {
+      "pulse": 0,
+      "guidance": 0,
+      "double_shot": 0,
+      "repair": 0
+    },
+    "free_start_eligible": true
+  },
+  "free_start_ability_weights": {
+    "status": "engineering_assumption",
+    "value": {
+      "pulse": 1,
+      "guidance": 1,
+      "double_shot": 1,
+      "repair": 1
+    }
+  },
+  "initial_placement_headings": {
+    "status": "engineering_assumption",
+    "value": [
+      "east",
+      "south"
+    ]
+  },
+  "bot_delay_ms": {
+    "status": "implementation_tuning_not_product_rule",
+    "value": null,
+    "note_ru": "Подобрать при реализации; сокращённые анимации не должны задерживать доступное действие."
+  }
+}

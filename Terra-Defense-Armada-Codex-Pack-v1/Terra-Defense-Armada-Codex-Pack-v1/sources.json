@@ -1,0 +1,82 @@
+{
+  "package_date": "2026-11-12",
+  "project": "Страж Терры: Армада",
+  "title_en": "Terra Defense: Armada",
+  "branding": {
+    "schema_version": 1,
+    "status": "approved",
+    "title_ru": "Страж Терры: Армада",
+    "title_en": "Terra Defense: Armada",
+    "series_ru": "Страж Терры",
+    "series_en": "Terra Defense",
+    "subtitle_ru": "Армада",
+    "subtitle_en": "Armada",
+    "short_title_ru": "Армада",
+    "short_title_en": "Armada",
+    "former_working_title_ru": "Космический бой",
+    "language_title_map": {
+      "ru": "Страж Терры: Армада",
+      "en": "Terra Defense: Armada"
+    },
+    "note_ru": "Это утверждённая пара локализованных названий. Использовать дословно, без повторного перевода названия между языками."
+  },
+  "design_basis": {
+    "type": "user_project_discussion",
+    "note_ru": "Последние прямые решения из текущего обсуждения; ранние правила восстановлены из истории проекта. Предварительные числа и инженерные допущения помечены отдельно. Чужие игровые механики не перенесены."
+  },
+  "visual_references": [
+    {
+      "path": "assets/references/fleet_final.png",
+      "source_filename": "Космический бой — флот из восьми кораблей(1).png",
+      "library_file_id": "libfile_d36c54bde160819185299a2c5f7ca9e2",
+      "purpose_ru": "Финальный общий лист восьми кораблей",
+      "status": "approved_visual_reference_not_production_sprite",
+      "sha256": "dfe2024d9ad233b14bc4b97b1ede98794233916244178a2a82cbb6184721c389"
+    },
+    {
+      "path": "assets/references/hud_landscape_compact.png",
+      "source_filename": "Большие поля, компактный HUD морского боя.png",
+      "library_file_id": "libfile_5f1e612ec8208191b2a6a2d583c21790",
+      "purpose_ru": "Принятый компактный HUD: альбомная ориентация",
+      "status": "approved_visual_reference_not_production_sprite",
+      "sha256": "ec3d4bcfd5723aa89267b0d69cebe97abf934343d70a961dae623dac723e4587"
+    },
+    {
+      "path": "assets/references/hud_portrait_compact.png",
+      "source_filename": "Портретный интерфейс морского боя.png",
+      "library_file_id": "libfile_35433c15798081919ecd13b7cd5b184b",
+      "purpose_ru": "Принятый компактный HUD: портретная ориентация",
+      "status": "approved_visual_reference_not_production_sprite",
+      "sha256": "97519d83e9f09b5f404e64d437fd67f3558be05f1d922bcc5cc187d755d870fe"
+    }
+  ],
+  "nickname_source": {
+    "path": "assets/space_battle_nicknames_500.json",
+    "library_file_id": "libfile_ce5734b33b7c819199b94eb55fe701df",
+    "entries": 500,
+    "status": "approved_original_dictionary_not_popularity_dataset"
+  },
+  "official_sdk_sources": [
+    {
+      "title": "Connection and usage",
+      "url": "https://yandex.com/dev/games/doc/en/sdk/sdk-about",
+      "checked_on": "2026-11-12"
+    },
+    {
+      "title": "Advertising / Rewarded video",
+      "url": "https://yandex.com/dev/games/doc/en/sdk/sdk-adv",
+      "checked_on": "2026-11-12"
+    },
+    {
+      "title": "Game loading and gameplay markup",
+      "url": "https://yandex.com/dev/games/doc/en/sdk/sdk-game-events",
+      "checked_on": "2026-11-12"
+    },
+    {
+      "title": "Pause and resume events",
+      "url": "https://yandex.com/dev/games/doc/en/sdk/sdk-events",
+      "checked_on": "2026-11-12"
+    }
+  ],
+  "validation_scope": "package_integrity_documents_configs_references_only_no_gameplay_execution"
+}

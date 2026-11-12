@@ -1,0 +1,165 @@
+{
+  "schema_version": 1,
+  "project": "Страж Терры: Армада",
+  "title_ru": "Страж Терры: Армада",
+  "title_en": "Terra Defense: Armada",
+  "package_version": "1",
+  "date": "2026-11-12",
+  "status": "agreed_rules_with_explicit_assumptions",
+  "board": {
+    "rows": 10,
+    "cols": 10,
+    "ru_columns": [
+      "А",
+      "Б",
+      "В",
+      "Г",
+      "Д",
+      "Е",
+      "Ж",
+      "З",
+      "И",
+      "К"
+    ],
+    "en_columns": [
+      "A",
+      "B",
+      "C",
+      "D",
+      "E",
+      "F",
+      "G",
+      "H",
+      "I",
+      "J"
+    ],
+    "touching_allowed": false,
+    "diagonal_touching_allowed": false
+  },
+  "standard_fleet": [
+    {
+      "length": 1,
+      "count": 4
+    },
+    {
+      "length": 2,
+      "count": 3
+    },
+    {
+      "length": 3,
+      "count": 2
+    },
+    {
+      "length": 4,
+      "count": 1
+    }
+  ],
+  "turn": {
+    "hit_retains_turn": true,
+    "miss_passes_turn": true,
+    "max_abilities_per_turn": 1,
+    "hit_resets_ability_quota": false,
+    "double_shot_retains_turn_if_any_hit": true,
+    "first_actor": {
+      "value": "random_50_50",
+      "status": "engineering_assumption"
+    }
+  },
+  "abilities": {
+    "pulse": {
+      "area": [
+        3,
+        3
+      ],
+      "result": "count_intact_sections",
+      "ends_turn": false,
+      "damage": 0,
+      "edge_policy": {
+        "value": "clamp_full_3x3_into_board",
+        "status": "engineering_assumption"
+      },
+      "result_history": {
+        "value": "timestamped_snapshot_not_live",
+        "status": "engineering_assumption"
+      }
+    },
+    "guidance": {
+      "reveals_sections": 1,
+      "selection": "random_intact_unknown_section",
+      "damage": 0,
+      "ends_turn": true,
+      "unknown_only": {
+        "value": true,
+        "status": "engineering_assumption"
+      }
+    },
+    "double_shot": {
+      "distinct_targets": 2,
+      "damage_per_target": 1,
+      "confirm_both_before_resolution": true,
+      "resolve_atomically": true
+    },
+    "repair": {
+      "sections_restored": 1,
+      "only_living_ships": true,
+      "ends_turn": true,
+      "restored_cell_can_be_shot_again": true,
+      "repair_visibility": {
+        "value": "public_cell_restored_both_knowledge_boards",
+        "status": "engineering_assumption"
+      }
+    }
+  },
+  "tactical_economy": {
+    "persistent_inventory": true,
+    "inventory_cap": null,
+    "free_start_grant": 1,
+    "grant_trigger": "actual_new_match_start_if_eligible",
+    "natural_end_grants_charge": false,
+    "natural_end_restores_eligibility": true,
+    "surrender_restores_eligibility": false,
+    "abandon_started_match_restores_eligibility": false,
+    "rewarded_grants": {
+      "pulse": 2,
+      "guidance": 1,
+      "double_shot": 1,
+      "repair": 1
+    }
+  },
+  "saves": {
+    "slots": [
+      "classic",
+      "tactical",
+      "challenge"
+    ],
+    "challenge_slot_shared_by_all_scenarios": true,
+    "replace_unfinished_requires_confirmation": true,
+    "profile_inventory_outside_match_snapshot": true
+  },
+  "visibility": {
+    "own_fleet_always_visible": true,
+    "enemy_full_model_revealed_when_sunk": true,
+    "show_misses_and_hits_both_boards": true,
+    "auto_mark_sunk_perimeter": true,
+    "highlight_last_enemy_shot": true,
+    "expose_future_bot_target": false
+  },
+  "modes": [
+    "classic",
+    "tactical",
+    "challenge"
+  ],
+  "bot": {
+    "local_only": true,
+    "can_read_hidden_player_board": false,
+    "difficulty_and_personality_hidden": true,
+    "profile_immutable_during_match": true,
+    "rewarded_refill": false
+  },
+  "replay": {
+    "preserve_bot_identity": true,
+    "reroll_both_layouts": true,
+    "reset_bot_inventory": true,
+    "preserve_current_player_persistent_inventory": true
+  }
+}

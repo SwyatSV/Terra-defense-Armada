@@ -1,0 +1,283 @@
+{
+  "schema_version": 1,
+  "status": "agreed_modes_limits_and_provisional_starting_balance",
+  "common": {
+    "enemy_fleet": [
+      {
+        "length": 1,
+        "count": 4
+      },
+      {
+        "length": 2,
+        "count": 3
+      },
+      {
+        "length": 3,
+        "count": 2
+      },
+      {
+        "length": 4,
+        "count": 1
+      }
+    ],
+    "isolated_inventory": true,
+    "max_rewarded_refills_per_attempt": 1,
+    "revive_destroyed_fleet": false,
+    "victory_precedes_resource_exhaustion": true,
+    "mastery_requires_no_rewarded_refill": true,
+    "counter_status": "recovered_working_rules"
+  },
+  "action_costs": {
+    "normal_shot": 1,
+    "double_shot": 1,
+    "pulse": 0,
+    "guidance": 1,
+    "repair": 1
+  },
+  "ammunition_costs": {
+    "normal_shot": 1,
+    "double_shot": 2,
+    "pulse": 0,
+    "guidance": 0,
+    "repair": 0
+  },
+  "miss_counting": "each_empty_attacked_cell_not_automatic_marks",
+  "scenarios": [
+    {
+      "id": "last_stand",
+      "name_ru": "Последний рубеж",
+      "player_fleet": [
+        {
+          "length": 3,
+          "count": 1
+        },
+        {
+          "length": 2,
+          "count": 1
+        },
+        {
+          "length": 1,
+          "count": 1
+        }
+      ],
+      "objective": "destroy_enemy_fleet",
+      "limit": null,
+      "starting_charges": {
+        "status": "provisional_balance",
+        "value": {
+          "pulse": 2,
+          "guidance": 2,
+          "double_shot": 3,
+          "repair": 2
+        }
+      },
+      "bot_profile": {
+        "status": "provisional_balance",
+        "difficulty": "medium",
+        "personality": "aggressive"
+      },
+      "continuation": {
+        "trigger": "player_turn_voluntary",
+        "kind": "chosen_ability_refill",
+        "status": "provisional_balance",
+        "rewards": {
+          "pulse": 2,
+          "guidance": 1,
+          "double_shot": 1,
+          "repair": 1
+        }
+      }
+    },
+    {
+      "id": "flagship_hunt",
+      "name_ru": "Охота на флагман",
+      "player_fleet": [
+        {
+          "length": 1,
+          "count": 4
+        },
+        {
+          "length": 2,
+          "count": 3
+        },
+        {
+          "length": 3,
+          "count": 2
+        },
+        {
+          "length": 4,
+          "count": 1
+        }
+      ],
+      "objective": "destroy_enemy_length_4_ship",
+      "limit": {
+        "kind": "player_actions",
+        "initial": 35,
+        "status": "agreed"
+      },
+      "starting_charges": {
+        "status": "provisional_balance",
+        "value": {
+          "pulse": 3,
+          "guidance": 1,
+          "double_shot": 2,
+          "repair": 0
+        }
+      },
+      "bot_profile": {
+        "status": "engineering_assumption",
+        "difficulty": "medium",
+        "personality": "balanced"
+      },
+      "continuation": {
+        "trigger": "limit_exhausted",
+        "kind": "add_resource",
+        "amount": 8,
+        "status": "agreed"
+      }
+    },
+    {
+      "id": "ammo_shortage",
+      "name_ru": "Дефицит боеприпасов",
+      "player_fleet": [
+        {
+          "length": 1,
+          "count": 4
+        },
+        {
+          "length": 2,
+          "count": 3
+        },
+        {
+          "length": 3,
+          "count": 2
+        },
+        {
+          "length": 4,
+          "count": 1
+        }
+      ],
+      "objective": "destroy_enemy_fleet",
+      "limit": {
+        "kind": "player_ammunition",
+        "initial": 45,
+        "status": "agreed"
+      },
+      "starting_charges": {
+        "status": "provisional_balance",
+        "value": {
+          "pulse": 3,
+          "guidance": 2,
+          "double_shot": 1,
+          "repair": 1
+        }
+      },
+      "bot_profile": {
+        "status": "engineering_assumption",
+        "difficulty": "medium",
+        "personality": "balanced"
+      },
+      "continuation": {
+        "trigger": "limit_exhausted",
+        "kind": "add_resource",
+        "amount": 10,
+        "status": "provisional_balance"
+      }
+    },
+    {
+      "id": "no_room_for_error",
+      "name_ru": "Без права на ошибку",
+      "player_fleet": [
+        {
+          "length": 1,
+          "count": 4
+        },
+        {
+          "length": 2,
+          "count": 3
+        },
+        {
+          "length": 3,
+          "count": 2
+        },
+        {
+          "length": 4,
+          "count": 1
+        }
+      ],
+      "objective": "destroy_enemy_fleet",
+      "limit": {
+        "kind": "player_misses",
+        "initial": 35,
+        "status": "agreed"
+      },
+      "starting_charges": {
+        "status": "provisional_balance",
+        "value": {
+          "pulse": 3,
+          "guidance": 3,
+          "double_shot": 1,
+          "repair": 1
+        }
+      },
+      "bot_profile": {
+        "status": "engineering_assumption",
+        "difficulty": "medium",
+        "personality": "balanced"
+      },
+      "continuation": {
+        "trigger": "limit_exhausted",
+        "kind": "increase_limit",
+        "new_limit": 45,
+        "status": "provisional_balance"
+      }
+    },
+    {
+      "id": "intellectual_superiority",
+      "name_ru": "Превосходство интеллекта",
+      "player_fleet": [
+        {
+          "length": 1,
+          "count": 4
+        },
+        {
+          "length": 2,
+          "count": 3
+        },
+        {
+          "length": 3,
+          "count": 2
+        },
+        {
+          "length": 4,
+          "count": 1
+        }
+      ],
+      "objective": "destroy_enemy_fleet",
+      "limit": null,
+      "starting_charges": {
+        "status": "provisional_balance",
+        "selection": {
+          "total": 6,
+          "max_per_ability": 3
+        }
+      },
+      "bot_profile": {
+        "status": "provisional_balance",
+        "difficulty": "expert",
+        "personality": "balanced"
+      },
+      "continuation": {
+        "trigger": "player_turn_voluntary",
+        "kind": "chosen_ability_refill",
+        "status": "provisional_balance",
+        "rewards": {
+          "pulse": 2,
+          "guidance": 1,
+          "double_shot": 1,
+          "repair": 1
+        }
+      }
+    }
+  ]
+}
