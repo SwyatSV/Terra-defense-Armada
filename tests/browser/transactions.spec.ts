@@ -112,7 +112,7 @@ test("real adapter mock: reward-only callback, duplicate protection, SDK pause p
   );
   await page.reload();
   await expect
-    .poll(() => page.evaluate(() => (window as any).sdkCounters.ready))
+    .poll(() => page.evaluate(() => (window as any).sdkCounters?.ready))
     .toBe(1);
   await page.locator('[data-do="continue"]').click();
   page.once("dialog", (d) => d.accept("1"));
