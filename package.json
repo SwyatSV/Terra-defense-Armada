@@ -1,13 +1,25 @@
 {
-  "name": "terra-defence-armada",
-  "version": "1.0.0",
-  "description": "",
-  "main": "index.js",
+  "name": "terra-defense-armada",
+  "version": "0.1.0",
+  "description": "Terra Defense: Armada — local turn-based fleet combat",
+  "private": true,
+  "engines": { "node": ">=24" },
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "dev": "vite --host 127.0.0.1",
+    "build": "tsc --noEmit && vite build",
+    "preview": "vite preview --host 127.0.0.1",
+    "test": "node --experimental-strip-types --test tests/*.test.ts",
+    "test:browser": "playwright test",
+    "benchmark": "node --experimental-strip-types scripts/benchmark.ts",
+    "format": "prettier --write src tests scripts playwright.config.ts"
   },
   "keywords": [],
   "author": "",
-  "license": "ISC",
-  "type": "commonjs"
+  "type": "module",
+  "devDependencies": {
+    "@playwright/test": "^1.65.0",
+    "prettier": "^3.10.1",
+    "typescript": "^7.0.2",
+    "vite": "^8.3.8"
+  }
 }

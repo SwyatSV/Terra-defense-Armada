@@ -1,0 +1,211 @@
+.ship:before,
+.ship:after,
+.ship i,
+.ship b {
+  display: none;
+}
+.ship img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  filter: drop-shadow(0 0 3px #73d9ef33);
+}
+.ship.vertical img {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  width: calc(var(--length) * 100%);
+  height: calc(100% / var(--length));
+  max-width: none;
+  transform: translate(-50%, -50%) rotate(90deg);
+}
+.ship.destroyed img {
+  filter: grayscale(1) brightness(0.8);
+}
+.ship.placement-preview {
+  opacity: 0.5;
+}
+.board-heading h2 {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+.menu-ship {
+  clip-path: none;
+  background: none;
+  height: 220px;
+  right: 0;
+  top: 35%;
+  width: 52%;
+  transform: rotate(-28deg);
+}
+.menu-ship img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+@media (max-width: 760px) {
+  .menu-ship {
+    width: 80%;
+    right: -100px;
+    top: 30%;
+  }
+}
+
+/* Keep both square boards within the available height on portrait screens. */
+@media (orientation: portrait) {
+  header {
+    height: 55px;
+  }
+  .boards {
+    grid-template-columns: 1fr;
+    gap: 12px;
+    width: min(100%, max(210px, calc((100dvh - 310px) / 2)));
+    margin: auto;
+  }
+  .enemy {
+    order: -1;
+  }
+  .board-panel {
+    padding: 0 6px 6px;
+  }
+  .board-heading {
+    height: 28px;
+  }
+  .board-heading h2 {
+    font-size: 10px;
+    letter-spacing: 0.3px;
+  }
+  .board-heading > span {
+    font-size: 9px;
+  }
+  .board-frame {
+    grid-template-columns: 15px 1fr;
+    grid-template-rows: 18px 1fr;
+  }
+  .col-labels,
+  .row-labels {
+    font-size: 9px;
+  }
+  .cell {
+    font-size: 23px;
+  }
+  .abilities {
+    flex-wrap: nowrap;
+    gap: 4px;
+  }
+  .abilities button {
+    padding: 5px;
+    gap: 4px;
+    font-size: 10px;
+  }
+  .ability-full {
+    display: none;
+  }
+  .ability-short {
+    display: inline;
+  }
+  .abilities i {
+    font-size: 17px;
+  }
+  .abilities .refill {
+    font-size: 0;
+  }
+  .abilities .refill::after {
+    content: "▷";
+    font-size: 21px;
+  }
+  .fire-control {
+    margin-top: 9px;
+    gap: 8px;
+    font-size: 11px;
+  }
+  .scan-history {
+    margin-top: 6px;
+    min-height: 12px;
+    font-size: 10px;
+  }
+}
+.ability-short {
+  display: none;
+}
+@media (orientation: portrait) {
+  .ability-short {
+    display: inline;
+  }
+}
+@media (orientation: landscape) and (max-height: 600px) {
+  .board-heading {
+    display: block;
+    position: relative;
+  }
+  .board-heading h2 {
+    font-size: 10px;
+    line-height: 14px;
+    padding-top: 2px;
+  }
+  .board-heading > span {
+    position: absolute;
+    right: 0;
+    bottom: 1px;
+    font-size: 8px;
+  }
+  .boards {
+    width: min(100%, calc((100dvh - 205px) * 2 + 20px));
+    margin: auto;
+  }
+  .combat-controls {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+    gap: 8px 18px;
+  }
+  .combat-controls .abilities {
+    gap: 5px;
+    flex-wrap: nowrap;
+  }
+  .combat-controls .abilities button {
+    padding: 5px 7px;
+    gap: 5px;
+  }
+  .combat-controls .ability-full {
+    display: none;
+  }
+  .combat-controls .ability-short {
+    display: inline;
+  }
+  .combat-controls .refill {
+    font-size: 0;
+  }
+  .combat-controls .refill::after {
+    content: "▷";
+    font-size: 18px;
+  }
+  .combat-controls .fire-control {
+    margin: 0;
+    font-size: 11px;
+    gap: 8px;
+  }
+  .combat-controls .fire-control button {
+    padding: 8px 12px;
+  }
+  .combat-controls .fire-control .primary {
+    min-width: 90px;
+  }
+  .combat-controls .scan-history {
+    flex-basis: 100%;
+    margin: 0;
+    min-height: 0;
+  }
+  .combat-controls .scan-history:empty {
+    display: none;
+  }
+}
+@media (orientation: landscape) and (min-height: 601px) {
+  .boards {
+    width: min(100%, calc((100dvh - 330px) * 2 + 20px));
+    margin: auto;
+  }
+}
